@@ -1,0 +1,26 @@
+﻿.header{
+	background-color:#000;
+	color:#fff;
+	border-color:#080808;
+	min-height:50px;
+	border:1px solid transparent;
+}
+.biodata{
+	position:relative;
+	overflow:hidden;
+	margin-left:10%;
+	margin-bottom:2%;
+	margin-top:5%;
+	background-color:rgba(0,0,0,0.5);
+	max-width:650px;
+}
+.profile-pic{
+	float:right;
+	margin-right:10%;
+	max-height:250px;
+	max-width:350px;
+}
+.table{
+	margin-left:10%;
+	margin-top:5%;
+}
