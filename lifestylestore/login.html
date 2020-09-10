@@ -1,0 +1,37 @@
+﻿<!doctype>
+<html>
+	<head>
+		<title>Sign UP|Lifestyle Store</title>
+		<link href="login.css" rel="stylesheet" type="text/css">
+	</head>
+	<body>
+		<div id="header">
+			<h1>Login</h1>
+		</div>
+		<div class="banner-image">
+			<div class="banner">
+				<div id="form">
+					<form name="loginform" onsubmit="validate()">
+  						<label for="email">Email:</label><input type="text" id="email" name="email" placeholder="your registered email" required><br><br>
+  						<label for="password">Password:</label><input type="password" id="password" name="password" required><br><br>
+  						<p>Don't have an account? <a href="signup.html">Sign Up</a></p>
+  						<input type="checkbox" checked="checked"> Remember me<br><br>
+  						<input type="reset" value="Reset">
+  						<input type="submit" value="Submit">
+  						<p>
+							*NOTE: This sign up page does not uses any form validation and is in initial stage of development* 
+						</p>
+					</form>
+				</div>
+			</div>				
+		</div>
+		<script>
+			function validate(){
+			alert("Click ok to submit");
+			var email= document.getElementById("email").value;
+			var password= document.getElementById("password").value;
+			alert("This page is not programmed yet to fuction this far !");		
+			}
+		</script>
+	</body>
+</html>
