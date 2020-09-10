@@ -1,0 +1,79 @@
+﻿<!doctype>
+<html>
+	<head>
+		<title>Sign UP|Lifestyle Store</title>
+		<link href="signup.css" rel="stylesheet" type="text/css">
+	</head>
+	<body>
+		<div id="header">
+			<h1>Sign Up</h1>
+		</div>
+		<div class="banner-image">
+			<div class="banner">
+				<div id="form">
+					<form name="signupform" onsubmit="validate()">
+  						<label for="fname">First name:</label><input type="text" id="fname" name="fname" placeholder="First name (required)" required><br><br>
+  						<label for="lname">Last name:</label><input type="text" id="lname" name="lname" value="" placeholder="Last name"><br><br>
+  						<label for="email">Email:</label><input type="text" id="email" name="email" placeholder="someone@abc.com" required><br><br>
+  						<label for="phoneno">Phone No:</label><input type="text" id="phoneno" name="phoneno" placeholder="+91" required><br><br>
+  						<label for="gender">Gender:</label>
+  						<input type="radio" id="male" name="gender" onclick="getGender(this.value)" value="Mr. "><label for="male">Male</label>
+  						<input type="radio" id="female" name="gender" onclick="getGender(this.value)" value="Ms. "><label for="female">Female</label>
+  						<input type="radio" id="other" name="gender" onclick="getGender(this.value)" value=""><label for="other">Other</label><br><br>
+  						<label for="password">Choose your password:</label><input type="password" id="password" name="password" required><br><br>
+  						<label for="cpassword">Confirm password:</label><input type="password" id="cpassword" name="cpassword" required><br><br>
+  						<input type="checkbox" checked="checked"> Remember me<br><br>
+  						<input type="reset" value="Reset">
+  						<input type="submit" value="Submit">
+  						<p>
+							*NOTE: This sign up page does not uses any form validation and is in initial stage of development* 
+						</p>
+					</form>
+				</div>
+				<h1 id="displayname"></h1>
+				<p id="contentpara"></p>
+				<p id="displayemail"></p>
+				<p id="displayphone"></p>
+				<p id="displaygender"></p>
+			</div>
+								
+		</div>
+		<script>
+			var gender="";
+			function getGender(gen){
+				gender=gen;
+			}
+			function validate(){
+				var hide = document.getElementById("form");
+				window.alert("Click ok to submit");
+				var fname= document.getElementById("fname").value;
+				var lname= document.getElementById("lname").value;
+				var email= document.getElementById("email").value;
+				var phoneno= document.getElementById("phoneno").value;
+				var password= document.getElementById("password").value;
+				var cpassword= document.getElementById("cpassword").value;
+				if(password.localeCompare(cpassword) == 0){
+					alert("Form submitted Successfully !");
+					hide.remove();
+					document.getElementById("header").innerHTML = "Sign Up successfull";
+					document.getElementById("displayname").innerHTML = ("Welcome ").concat(gender," ",fname," ",lname);
+					document.getElementById("contentpara").innerHTML = "These are the credentials entered by you";
+					document.getElementById("displayemail").innerHTML = ("Email: ").concat(email);
+					document.getElementById("displayphone").innerHTML = ("Phone No.: ").concat(phoneno);
+					if(gender == "Mr. "){
+						document.getElementById("displaygender").innerHTML = "Gender: M";
+					}
+					else if(gender.localeCompare("Ms. ") == 0){
+						document.getElementById("displaygender").innerHTML = "Gender: F";
+					}
+					else{
+					document.getElementById("displaygender").innerHTML = "Gender: Other";
+					}
+				}
+				else{
+					alert("Passwords do not match. Try again!");
+				}		
+			}
+		</script>
+	</body>
+</html>

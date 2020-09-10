@@ -1,0 +1,27 @@
+﻿body{
+	background:url(images/intro-bg_1.jpg) no-repeat;
+	
+}
+.banner-image{
+	padding-bottom:30px;
+	margin-bottom:10px;
+	text-align:center;
+	color:#f8f8f8;
+}
+#header{
+	background-color:#000;
+	color:#fff;
+	border-color:#080808;
+	min-height:50px;
+	border:1px solid transparent;
+}
+.banner{
+	position:relative;
+	padding-top:5%;
+	padding-bottom:4%;
+	overflow:hidden;
+	margin-top:3%;
+	margin-left:3%;
+	background-color:rgba(0,0,0,0.8);
+	max-width:660px;
+}
