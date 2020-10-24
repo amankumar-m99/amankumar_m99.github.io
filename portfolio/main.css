@@ -1,0 +1,45 @@
+body{
+   background-color: #e9e9e9;
+}
+.header{
+   position: fixed;
+   overflow:hidden;
+   left:0px;
+   top:0px;
+   width:100%;
+   height:auto;
+   z-index: 1;
+   background-color:#0076ec;
+   /*#000057*//*#0076ec*/
+}
+#navbar ul{
+   list-style-type: none;
+}
+#navbar li{
+   float:left;
+   display: block;
+   font-size:20px;
+   font-weight: 550;
+   padding: 0px 28px 15px 18px;
+}
+#navbar a{
+   text-decoration: none;
+   text-shadow:4px 4px 8px #000057;
+   color: #ffffff;
+}
+#welcome{
+   position: relative;
+   height: 100vh;
+}
+#welcome p{
+   padding-top:200px;
+   padding-left: 150px;
+   font-size: 50px;
+}
+span.projects{
+   display: inline-block;
+   width:200px;
+   height:200px;
+   margin: 0px 10px 100px 10px;
+   border: 1px solid #000000;
+}
