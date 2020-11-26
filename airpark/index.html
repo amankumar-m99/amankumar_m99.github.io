@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="icon" href="airparklogo.png" type="image/x-icon">
+   <link rel="stylesheet" href="main.css" type="text/css">
+   <title>geolocation</title>
+</head>
+
+<body>
+   <header>
+      <div class="logo">
+         <img src="airparklogo.png">
+      </div>
+   </header>
+   <button onclick="getlocation()">click</button>
+   <p id="location"></p>
+   <div id="map"></div>
+   <script>
+      var x = document.getElementById("location");
+      var maplat = 28.609740799999997;
+      var maplog = 77.2046848;
+      function getlocation() {
+         if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition, showError);
+         }
+         else {
+            x.innerHTML = "Geolocation not supported by this browser";
+         }
+      }
+      function showPosition(position) {
+         var latlon = position.coords.latitude + "," + position.coords.longitude;
+         maplat = position.coords.latitude;
+         maplog = position.coords.longitude;
+         x.innerHTML = "Latitude: " + position.coords.latitude + "<br>Longitude: " + position.coords.longitude;
+      }
+      function showError(error) {
+         switch (error.code) {
+            case error.PERMISSION_DENIED: x.innerHTML = "User denied the request"; break;
+            case error.POSITION_UNAVAILABLE: x.innerHTML = "Loc info not available"; break;
+            case error.TIMEOUT: x.innerHTML = "Timed out"; break;
+            case error.UNKNOWN_ERROR: x.innerHTML = "An unknown error occurred"; break;
+         }
+      }
+      // Initialize and add the map
+      function initMap() {
+         // The location of Uluru
+         // const locat = { lat: maplat, lng: maplog };
+         const locat = { lat: 27.1767, lng: 78.0081 };
+         // The map, centered at locat
+         const map = new google.maps.Map(document.getElementById("map"), {
+            zoom: 17,
+            center: locat,
+         });
+         // The marker, positioned at locat
+         const marker = new google.maps.Marker({
+            position: locat,
+            map: map,
+         });
+      }
+   </script>
+   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD3NlWFnkHFRRFX3lAKmgdQp8qD3729F8g&callback=initMap&libraries=&v=weekly"
+   defer>
+   </script>
+</body>
+</html>
